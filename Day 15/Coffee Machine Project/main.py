@@ -30,3 +30,31 @@ resources = {
     "coffee": 100,
 }
 
+def calculate_change():
+    print("Please insert coins.")
+    quarters = int(input("how many quarters?:"))
+    dimes = int(input("how many dimes?:"))
+    nickels = int(input("how many nickels?:"))
+    pennies = int(input("how many pennies?:"))
+    return (quarters * 0.25) + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01)
+
+def coffee_machine():
+    choice = input("What would you like? (espresso/latte/cappuccino):")
+
+    if choice == "off":
+        return
+    elif choice == "espresso":
+        obj = MENU["espresso"]
+        calculate_change()
+    elif choice == "latte":
+        obj = MENU["latte"]
+        calculate_change()
+    elif choice == "cappuccino":
+        obj = MENU["cappuccino"]
+        calculate_change()
+    elif choice == "report":
+        print(resources)
+    else:
+        return
+
+# print(calculate_change())
